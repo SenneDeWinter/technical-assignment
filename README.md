@@ -8,10 +8,20 @@
 2. Install
 ```bash
   composer install
+```
+```bash
   npm install
+```
+```bash
   cp .env.example .env
+```
+```bash
   php artisan key:generate
+```
+```bash
   php artisan migrate:fresh
+ ```
+```bash
   npm run dev
 ```
 
@@ -29,5 +39,7 @@
 
 ```bash
   composer test
+```
+```bash
   composer coverage
 ```

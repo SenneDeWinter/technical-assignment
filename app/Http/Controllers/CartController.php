@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Resources\CartResource;
+use App\Models\DeletedItem;
 use App\Repositories\Repositories\ComicRepository;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -46,6 +47,18 @@ class CartController extends Controller
             if ($item['marvel_id'] === $comic_id) {
                 unset($cart[$key]);
                 $request->session()->put('cart', $cart);
+
+                $deletedItem = DeletedItem::where('marvel_id', $comic_id)->first();
+                if ($deletedItem) {
+                    $deletedItem->times_deleted += 1;
+                    $deletedItem->save();
+                } else {
+                    DeletedItem::create([
+                        'marvel_id' => $comic_id,
+                        'title' => $item['title'],
+                        'times_deleted' => 1,
+                    ]);
+                }
 
                 return response()->json(['message' => 'Comic removed from cart']);
             }

@@ -16,4 +16,12 @@ class Comic extends Model
         'page_count',
         'thumbnail',
     ];
+
+    protected $casts = [
+        'title' => 'string',
+        'format' => 'string',
+        'marvel_id' => 'integer',
+        'page_count' => 'integer',
+        'thumbnail' => 'string',
+    ];
 }

@@ -3,7 +3,7 @@
 ### Installation
 1. Clone
 ```bash
-  git clone https://github.com/SenneDeWinter/technical-assignment.git
+  git clone git@github.com:SenneDeWinter/technical-assignment.git
 ```
 2. Install
 ```bash

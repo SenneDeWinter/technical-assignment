@@ -23,7 +23,7 @@ class CartController extends Controller
                 $item['quantity'] += 1;
                 $request->session()->put('cart', $cart);
 
-                return response()->json(['message' => 'Comic added to cart', 'cart' => $cart]);
+                return response()->json(['message' => 'Comic added to cart']);
             }
         }
 

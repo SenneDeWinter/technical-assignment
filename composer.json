@@ -45,6 +45,12 @@
             "@php artisan key:generate --ansi",
             "@php -r \"file_exists('database/database.sqlite') || touch('database/database.sqlite');\"",
             "@php artisan migrate --graceful --ansi"
+        ],
+        "test": [
+            "@php 'vendor/bin/pest' '-p'"
+        ],
+        "coverage": [
+            "@php 'vendor/bin/pest' '--coverage' '-p'"
         ]
     },
     "extra": {

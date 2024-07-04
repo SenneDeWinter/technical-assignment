@@ -17,7 +17,8 @@ class CartResource extends JsonResource
         return [
             'previewImage' => $this['thumbnail'],
             'title' => $this['title'],
-            'quantity' => $this['quantity']
+            'quantity' => $this['quantity'],
+            'marvelId' => $this['marvel_id'],
         ];
     }
 }
